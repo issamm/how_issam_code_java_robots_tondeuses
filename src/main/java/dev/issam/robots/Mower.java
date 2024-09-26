@@ -7,13 +7,13 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Tondeuse {
+public class Mower {
 
     private Position position;
     private Orientation orientation;
 
-    public Tondeuse(int x, int y, Orientation orientation, Pelouse pelouse) {
-        this.position = new Position(x, y, pelouse);
+    public Mower(int x, int y, Orientation orientation, Lawn lawn) {
+        this.position = new Position(x, y, lawn);
         this.orientation = orientation;
     }
 
@@ -22,7 +22,7 @@ public class Tondeuse {
     }
 
     public void actions(List<Action> action) {
-        action.stream().forEach(singleAction -> orientation.move(this, singleAction));
+        action.forEach(singleAction -> orientation.move(this, singleAction));
     }
 
 }

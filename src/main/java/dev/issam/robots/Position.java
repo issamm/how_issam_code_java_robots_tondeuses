@@ -6,34 +6,34 @@ import lombok.Getter;
 public class Position {
     private int x;
     private int y;
-    private final Pelouse pelouse;
+    private final Lawn lawn;
 
-    public Position(int x, int y, Pelouse pelouse) {
+    public Position(int x, int y, Lawn lawn) {
         this.x = x;
         this.y = y;
-        this.pelouse = pelouse;
+        this.lawn = lawn;
     }
 
     public void decrementX() {
-        if (pelouse.isInside(x - 1, y)) {
+        if (lawn.isInside(x - 1, y)) {
             --x;
         }
     }
 
     public void incrementX() {
-        if (pelouse.isInside(x + 1, y)) {
+        if (lawn.isInside(x + 1, y)) {
             ++x;
         }
     }
 
     public void decrementY() {
-        if (pelouse.isInside(x, y - 1)) {
+        if (lawn.isInside(x, y - 1)) {
             --y;
         }
     }
 
     public void incrementY() {
-        if (pelouse.isInside(x, y + 1)) {
+        if (lawn.isInside(x, y + 1)) {
             ++y;
         }
     }

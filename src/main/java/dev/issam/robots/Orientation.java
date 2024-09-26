@@ -3,44 +3,44 @@ package dev.issam.robots;
 public enum Orientation {
     N {
         @Override
-        public void move(Tondeuse tondeuse, Action action) {
+        public void move(Mower mower, Action action) {
             switch (action) {
-                case G -> tondeuse.setOrientation(W);
-                case D -> tondeuse.setOrientation(E);
-                case A -> tondeuse.getPosition().incrementY();
+                case L -> mower.setOrientation(W);
+                case R -> mower.setOrientation(E);
+                case A -> mower.getPosition().incrementY();
             }
         }
     },
     E {
         @Override
-        public void move(Tondeuse tondeuse, Action action) {
+        public void move(Mower mower, Action action) {
             switch (action) {
-                case G -> tondeuse.setOrientation(N);
-                case D -> tondeuse.setOrientation(S);
-                case A -> tondeuse.getPosition().incrementX();
+                case L -> mower.setOrientation(N);
+                case R -> mower.setOrientation(S);
+                case A -> mower.getPosition().incrementX();
             }
         }
     },
     W {
         @Override
-        public void move(Tondeuse tondeuse, Action action) {
+        public void move(Mower mower, Action action) {
             switch (action) {
-                case G -> tondeuse.setOrientation(S);
-                case D -> tondeuse.setOrientation(N);
-                case A -> tondeuse.getPosition().decrementX();
+                case L -> mower.setOrientation(S);
+                case R -> mower.setOrientation(N);
+                case A -> mower.getPosition().decrementX();
             }
         }
     },
     S {
         @Override
-        public void move(Tondeuse tondeuse, Action action) {
+        public void move(Mower mower, Action action) {
             switch (action) {
-                case G -> tondeuse.setOrientation(E);
-                case D -> tondeuse.setOrientation(W);
-                case A -> tondeuse.getPosition().decrementY();
+                case L -> mower.setOrientation(E);
+                case R -> mower.setOrientation(W);
+                case A -> mower.getPosition().decrementY();
             }
         }
     };
 
-    public abstract void move(Tondeuse tondeuse, Action action);
+    public abstract void move(Mower mower, Action action);
 }

@@ -1,9 +1,10 @@
 package dev.issam.robots;
 
-public record Pelouse(int width, int height) {
-    public Pelouse {
+public record Lawn(int width, int height) {
+
+    public Lawn {
         if (width < 1 || height < 1) {
-            throw new IllegalArgumentException("La pelouse doit avoir une taille valide");
+            throw new IllegalArgumentException("La lawn doit avoir une taille valide");
         }
     }
 
