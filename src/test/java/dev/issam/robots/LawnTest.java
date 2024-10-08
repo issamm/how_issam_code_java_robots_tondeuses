@@ -1,5 +1,6 @@
 package dev.issam.robots;
 
+import dev.issam.robots.model.Lawn;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

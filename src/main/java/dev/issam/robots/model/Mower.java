@@ -1,5 +1,7 @@
-package dev.issam.robots;
+package dev.issam.robots.model;
 
+import dev.issam.robots.enums.Action;
+import dev.issam.robots.enums.Orientation;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,12 +19,12 @@ public class Mower {
         this.orientation = orientation;
     }
 
-    public void singleAction(Action action) {
-        orientation.move(this, action);
+    public void actions(List<Action> action) {
+        action.forEach(this::singleAction);
     }
 
-    public void actions(List<Action> action) {
-        action.forEach(singleAction -> orientation.move(this, singleAction));
+    public void singleAction(Action action) {
+        orientation.getApplyActionOnOrientedMower().apply(this, action);
     }
 
 }

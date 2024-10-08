@@ -1,5 +1,9 @@
 package dev.issam.robots;
 
+import dev.issam.robots.enums.Orientation;
+import dev.issam.robots.enums.Action;
+import dev.issam.robots.model.Lawn;
+import dev.issam.robots.model.Mower;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +11,7 @@ class MowerCircuitStepByStepActionsTest {
 
     @Test
     void givenMowerLeftDown_whenGoingNorthEast_thenMowerUpRight(){
-        Mower mower = new Mower(0,0,Orientation.N, new Lawn(2,2));
+        Mower mower = new Mower(0,0, Orientation.N, new Lawn(2,2));
         mower.singleAction(Action.R);
         Assertions.assertThat(mower.getPosition().getX()).isZero();
         Assertions.assertThat(mower.getPosition().getY()).isZero();

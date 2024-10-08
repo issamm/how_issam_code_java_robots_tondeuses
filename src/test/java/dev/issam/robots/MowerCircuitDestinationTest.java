@@ -1,5 +1,9 @@
 package dev.issam.robots;
 
+import dev.issam.robots.enums.Orientation;
+import dev.issam.robots.enums.Action;
+import dev.issam.robots.model.Lawn;
+import dev.issam.robots.model.Mower;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

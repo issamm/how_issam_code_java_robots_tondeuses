@@ -1,4 +1,4 @@
-package dev.issam.robots;
+package dev.issam.robots.model;
 
 import lombok.Getter;
 
